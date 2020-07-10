@@ -1,0 +1,6 @@
+<ng-container *ngIf="loadingStack$ | async as loadingStack">
+  <div id="loading-wrapper" *ngIf="loadingStack && loadingStack.length" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+    <mat-spinner></mat-spinner>
+    <p>{{ loadingStack[0].message || "Es lädt ..." }}</p>
+  </div>
+</ng-container>

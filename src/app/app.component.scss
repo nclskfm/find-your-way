@@ -1,0 +1,8 @@
+div.container {
+  display: flex;
+  margin: 80px 8px 8px 8px;
+  @media (min-width: 810px) {
+    margin: 80px auto 8px auto;
+    width: 80%;
+  }
+}

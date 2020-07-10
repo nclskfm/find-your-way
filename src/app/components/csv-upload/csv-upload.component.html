@@ -1,0 +1,8 @@
+<h1>CSV-Upload</h1>
+<p>Bitte lade deine CSV-Datei hoch. Sie sollte das Format <i>Nummer,msg Standort,Straße,Hausnummer,PLZ,Ort,Breitengrad,Längengrad</i> haben. Wie die Headerzeile genau beschriftet wird, spielt keine Rolle. Es wird erst aber der zweiten Zeile gelesen.</p>
+
+<mat-form-field appearance="outline">
+  <mat-label>CSV-Datei</mat-label>
+  <ngx-mat-file-input [formControl]="csvControl" accept=".csv"></ngx-mat-file-input>
+  <mat-icon matSuffix>table_chart</mat-icon>
+</mat-form-field>
