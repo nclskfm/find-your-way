@@ -19,9 +19,9 @@ ngAfterViewInit() {
 
   // load the api key dynamically
   // make sure the api key for google maps is in a file with the name "API_KEY"
-  this.http.get('API_KEY', { responseType: 'text' }).pipe(
+  this.http.get('API_KEY.txt', { responseType: 'text' }).pipe(
     catchError(err => {
-      console.error('MISSING/WRONG API_KEY', 'please make sure, you have created a file "API_KEY under "/src" with your google api key!');
+      console.error('MISSING/WRONG API_KEY', 'please make sure, you have created a file "/src/API_KEY.txt with your google api key!');
       return throwError(err);
     })
   ).subscribe(apiKey => {

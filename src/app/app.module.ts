@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +13,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './components/home/home.component';
-import { TestComponent } from './components/test/test.component';
 import { InputComponent } from './components/input/input.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
@@ -29,6 +28,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RoutesListComponent } from './components/routes-list/routes-list.component';
 import { LocationsListPipe } from './core/pipes/locations-list.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { ContributionComponent } from './components/contribution/contribution.component';
 
 
 
@@ -37,7 +37,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     CsvUploadComponent,
     HomeComponent,
-    TestComponent,
     InputComponent,
     LoadingComponent,
     NavBarComponent,
@@ -46,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     RoutePipe,
     RoutesListComponent,
     LocationsListPipe,
+    ContributionComponent,
   ],
   imports: [
     BrowserModule,
