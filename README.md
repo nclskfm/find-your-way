@@ -10,11 +10,15 @@
 3. [Starten](#Starten)
 4. [Funktionen](#Funktionen)
 5. [Beispieldaten](#Beispieldaten)
+6. [Lösung der Challenge](#Lösung-der-Challenge)
 
   
 
 ## Einleitung
 Find your way ist eine Angular-Applikation, um ein TSP (_Traveling Salesman Problem_; Rundreise-Problem) zu lösen. Die Daten werden mittels einer CSV-Datei hochgeladen.
+
+Die Web-Applikation wurde im Rahmen der [get in IT Coding Challenge](https://www.get-in-it.de/magazin/events/challenges/coding-challenge-2020) erstellt.
+
 
 ## Algorithmus
 Der gewählte Algorithmus basiert auf die [Branch and Bound](https://de.wikipedia.org/wiki/Branch-and-Bound)-Methode. Diese Methode wurde genommen, weil sie effekt ganzzahlige Optimierungsprobleme lösen kann. Zwar ist diese Methode relativ speicher aufwändig, jedoch sollte das für bis zu 40 Knoten kein Problem sein. Außerdem ist der Algorithmus relativ einfach zu verstehen und zu implementieren.   
