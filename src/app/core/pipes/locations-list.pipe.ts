@@ -1,6 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Location } from '../interfaces/location.interface';
 
+/**
+ * Pipe to return a string containing the chained location names.
+ * The first and last location are ignored.
+ */
 @Pipe({
   name: 'locationsList'
 })

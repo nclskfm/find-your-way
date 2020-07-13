@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Loading } from '../interfaces/loading.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+/**
+ * Service to handle the loading
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +15,6 @@ export class LoadingService {
   constructor() { }
 
   public add(loading: Loading) {
-    console.log(loading);
     const newStack = this.loadingStack$.getValue();
     newStack.unshift(loading);
     this.loadingStack$.next(newStack);

@@ -1,5 +1,11 @@
 import { Solution } from '../core/interfaces/solution.interface';
 
+/**
+ * Class to calculcate the tsp problem.
+ *
+ * For further information  check [GeeksforGeeks](https://www.geeksforgeeks.org/traveling-salesman-problem-using-branch-and-bound-2/)
+ * and [wikipedia](https://en.wikipedia.org/wiki/Branch_and_bound)
+ */
 export class TspSolver {
 
   adj: number[][] = [];
@@ -10,11 +16,17 @@ export class TspSolver {
   finalResult = Infinity;
   finalPath: number[] = [];
 
+  /**
+   * @param adj adjacency matrix
+   */
   constructor(adj: number[][]) {
     this.adj = adj;
     this.n = adj.length;
   }
 
+  /**
+   * starts the tsp algorithm
+   */
   public solve(): Solution {
     const startTime = new Date();
     const visited: boolean[] = new Array(this.n);
@@ -51,6 +63,10 @@ export class TspSolver {
     this.finalResult = result;
   }
 
+  /**
+   * return the smallest number for a given
+   * @param i row
+   */
   private getFirstMin(i: number): number {
     let min = this.maxSize;
 
@@ -62,6 +78,10 @@ export class TspSolver {
     return min;
   }
 
+  /**
+   * return the second smallest number for a given
+   * @param i row
+   */
   private getSecondMin(i: number): number {
     let firstMin = this.maxSize;
     let secondMin = this.maxSize;

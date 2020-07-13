@@ -1,3 +1,6 @@
+/**
+ * location interface to store the uploaded csv data
+ */
 export interface Location {
   id: number;
   msgLocation: string;

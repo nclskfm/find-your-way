@@ -3,6 +3,9 @@ import { TspInitService } from 'src/app/core/services/tsp-init.service';
 import { Observable } from 'rxjs';
 import { Solution } from 'src/app/core/interfaces/solution.interface';
 
+/**
+ * Compontent to show the calculated result as a table.
+ */
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',

@@ -4,6 +4,9 @@ import { Location } from '../interfaces/location.interface';
 import { DataService } from './data.service';
 import { shareReplay, map } from 'rxjs/operators';
 
+/**
+ * Service to convert and store the CSV data from the `DataService` into locations.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +19,6 @@ export class LocationService {
       map(data => {
         if (!data) { return null; }
         const locations: Location[] = [];
-        console.log(data);
         data.forEach(row => {
           if (row[0] !== '' && row.length === 8) {
             const location: Location = {

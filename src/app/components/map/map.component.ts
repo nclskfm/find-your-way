@@ -5,6 +5,9 @@ import { TspInitService } from 'src/app/core/services/tsp-init.service';
 import { Observable } from 'rxjs';
 import { Location } from 'src/app/core/interfaces/location.interface';
 
+/**
+ * Component to display Google Maps and draw the nodes and paths.
+ */
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -53,7 +56,6 @@ export class MapComponent implements OnInit {
           this.markers.push(marker);
         });
       }
-      console.log('markers', this.markers);
     });
 
     this.tspInitService.getSolution().subscribe(solution => {

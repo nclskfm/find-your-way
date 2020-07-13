@@ -4,6 +4,9 @@ import { Location } from 'src/app/core/interfaces/location.interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+/**
+ * Component to show the splitted routes for Google Maps (Google Maps supports only 9 waypoints).
+ */
 @Component({
   selector: 'app-routes-list',
   templateUrl: './routes-list.component.html',
@@ -49,7 +52,6 @@ export class RoutesListComponent implements OnInit {
           splittedRoutes.push(row);
         }
 
-        console.log(splittedRoutes);
         return splittedRoutes;
 
       })

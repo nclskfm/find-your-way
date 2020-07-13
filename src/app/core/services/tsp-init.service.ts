@@ -4,11 +4,14 @@ import { Solution } from '../interfaces/solution.interface';
 import { Location } from '../interfaces/location.interface';
 import { LoadingService } from './loading.service';
 import { TspSolver } from 'src/app/tsp-solver/tsp-solver';
-import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { LocationService } from './location.service';
 
 // tslint:disable: prefer-for-of
 
+/**
+ * Service to initiate the tsp solver and save the solution.
+ * The actual tsp algorithm is outsourced in an extra class `TspSolver`.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +31,11 @@ export class TspInitService {
     });
   }
 
+  /**
+   * function to calculate the distance between two points.
+   *
+   * Credits: https://stackoverflow.com/a/27943/10967372
+   */
   private getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
     const r = 6371; // Radius of the earth in km
     const dLat = this.deg2rad(lat2 - lat1);  // deg2rad below
@@ -46,9 +54,13 @@ export class TspInitService {
     return deg * (Math.PI / 180);
   }
 
+  /**
+   * function to convert
+   * @param locations array of locations
+   * into
+   * @returns adjacency matrix (number[][])
+   */
   private calculateAdj(locations: Location[]): number[][] {
-
-    console.log('calculateAdj()', locations);
     const adj: number[][] = [];
 
     for (let i = 0; i < locations.length; i++) {
@@ -63,15 +75,15 @@ export class TspInitService {
       }
       adj.push(row);
     }
-
-    console.log(adj);
     return adj;
   }
 
+  /**
+   * function to sort a locations array by a given path
+   */
   private mapLocationsToPath(path: number[], locations: Location[]): Location[] {
     const newLocations: Location[] = [];
 
-    console.log(path);
     path.forEach(point => {
       const location = locations.find(l => l.id === point);
 
@@ -84,6 +96,10 @@ export class TspInitService {
     return newLocations;
   }
 
+  /**
+   * function to initalize the tsp. The calculated result is stored into the behavior subject `solution$`.
+   * @param locations locations array
+   */
   public initTsp(locations: Location[]) {
 
     const adj = this.calculateAdj(locations);
@@ -102,7 +118,6 @@ export class TspInitService {
 
       solution.locations = this.mapLocationsToPath(solution.path, locations) || null;
       this.loadingService.remove('calculate-tsp');
-      console.log(solution);
       this.solution$.next(solution);
 
     }), 10);

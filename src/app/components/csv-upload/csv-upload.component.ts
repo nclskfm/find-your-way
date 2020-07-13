@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DataService } from 'src/app/core/services/data.service';
 
+/**
+ * Component to show the input for uploading the csv file
+ */
 @Component({
   selector: 'app-csv-upload',
   templateUrl: './csv-upload.component.html',

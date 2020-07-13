@@ -25,7 +25,6 @@ ngAfterViewInit() {
       return throwError(err);
     })
   ).subscribe(apiKey => {
-    console.log(apiKey);
     const s = document.createElement('script');
     s.type = 'text/javascript';
     s.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey;

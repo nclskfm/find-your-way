@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { Location } from 'src/app/core/interfaces/location.interface';
 import { TspInitService } from 'src/app/core/services/tsp-init.service';
 
+/**
+ * compontent to show the uploaded csv data as table. It shows also the `Compute` button to start the tsp.
+ */
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -24,7 +27,6 @@ export class InputComponent implements OnInit {
     this.locations$ = this.locationService.getLocations();
     this.locations$.subscribe(locations => {
       this.locations = locations;
-      console.log(locations);
     });
   }
 
