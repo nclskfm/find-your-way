@@ -24,10 +24,10 @@ Die Web-Applikation wurde im Rahmen der [get in IT Coding Challenge](https://www
 Der gewählte Algorithmus basiert auf die [Branch and Bound](https://de.wikipedia.org/wiki/Branch-and-Bound)-Methode. Diese Methode wurde genommen, weil sie effekt ganzzahlige Optimierungsprobleme lösen kann. Zwar ist diese Methode relativ speicher aufwändig, jedoch sollte das für bis zu 40 Knoten kein Problem sein. Außerdem ist der Algorithmus relativ einfach zu verstehen und zu implementieren.   
 
 ## Starten
-0. **(nicht für die Challenge!)** Um die Angular-Applikation zu starten, muss zuerst ein API-Key für google maps erstellt werden (siehe [hier](https://developers.google.com/maps/documentation/javascript/get-api-key). Dieser Key muss in die Datei _/src/API_KEY.txt_ gespeichert werden.
-1. Danach kann der Docker-Container erstellt werden mit `docker build -t find-your-way .` und
-2. gestartet werden mit `docker run -it -p 80:80 find-your-way`.
-3. Anschließend startet die App unter [localhost:80](localhost:80).
+1. Um die Angular-Applikation zu starten, muss zuerst ein API-Key für google maps erstellt werden (siehe [hier](https://developers.google.com/maps/documentation/javascript/get-api-key). Dieser Key muss in die Datei _/src/API_KEY.txt_ gespeichert werden.
+2. Danach kann der Docker-Container erstellt werden mit `docker build -t find-your-way .` und
+3. gestartet werden mit `docker run -it -p 80:80 find-your-way`.
+4. Anschließend startet die App unter [localhost:80](localhost:80).
 
 
 ## Funktionen
@@ -42,8 +42,9 @@ Find-your-way hat folgende Funktionen:
 ## Beispieldaten
 
 So sollte die CSV-Datei aussehen (im Verzeichnis ist auch eine Datei _example-data.csv_):
+**Hinweis**: Die Spalten Straße, Hausnummer, PLZ und Ort können leer sein.
 
-|Nummer|msg Standort                |Straße                   |Hausnummer|PLZ  |Ort                    |Breitengrad|Längengrad|
+|Nummer|Standort                    |Straße                   |Hausnummer|PLZ  |Ort                    |Breitengrad|Längengrad|
 |------|----------------------------|-------------------------|----------|-----|-----------------------|-----------|----------|
 |1     |Ismaning/München (Hauptsitz)|Robert-Bürkle-Straße     |1         |85737|Ismaning               |48.229035  |11.686153 |
 |2     |Berlin                      |Wittestraße              |30        |13509|Berlin                 |52.580911  |13.293884 |
@@ -130,9 +131,11 @@ Find-your-way has the following features:
 
 ## Example data
 
-This is how the CSV file should look like:
+This is how the CSV file should look like (there is also a file _example-data.csv_ in the directory; this file is in German, but the language of the uploaded header is not important):
 
-|Id|location name                |street                   |house number|postcode  |city                    |latitude|longitude|
+**note**: The columns street, house number, post code and city can be blank.
+
+|Id|location name                |street                   |house number|post code  |city                    |latitude|longitude|
 |------|----------------------------|-------------------------|----------|-----|-----------------------|-----------|----------|
 |1     |Ismaning/München (Hauptsitz)|Robert-Bürkle-Straße     |1         |85737|Ismaning               |48.229035  |11.686153 |
 |2     |Berlin                      |Wittestraße              |30        |13509|Berlin                 |52.580911  |13.293884 |
@@ -140,4 +143,4 @@ This is how the CSV file should look like:
 |4     |Bretten                     |Edisonstraße             |2         |75015|Bretten                |49.032767  |8.698372  |
 |5     |Chemnitz                    |Zwickauer Straße         |16a       |09122|Chemnitz               |50.829383  |12.914737 |
 
-there is also a file _example-data.csv_ in the directory; note: this file is in German, but the language of the uploaded header is not important!
+
