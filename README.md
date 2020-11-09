@@ -24,7 +24,7 @@ Die Web-Applikation wurde im Rahmen der [get in IT Coding Challenge](https://www
 Der gewählte Algorithmus basiert auf die [Branch and Bound](https://de.wikipedia.org/wiki/Branch-and-Bound)-Methode. Diese Methode wurde genommen, weil sie effekt ganzzahlige Optimierungsprobleme lösen kann. Zwar ist diese Methode relativ speicher aufwändig, jedoch sollte das für bis zu 40 Knoten kein Problem sein. Außerdem ist der Algorithmus relativ einfach zu verstehen und zu implementieren.   
 
 ## Starten
-1. Um die Angular-Applikation zu starten, muss zuerst ein API-Key für google maps erstellt werden (siehe [hier](https://developers.google.com/maps/documentation/javascript/get-api-key). Dieser Key muss in die Datei _/src/API_KEY.txt_ gespeichert werden.
+1. Um die Angular-Applikation zu starten, muss zuerst ein API-Key für google maps erstellt werden (siehe [hier](https://developers.google.com/maps/documentation/javascript/get-api-key)). Dieser Key muss in die Datei _/src/API_KEY.txt_ gespeichert werden.
 2. Danach kann der Docker-Container erstellt werden mit `docker build -t find-your-way .` und
 3. gestartet werden mit `docker run -it -p 80:80 find-your-way`.
 4. Anschließend startet die App unter [localhost:80](localhost:80).
@@ -42,11 +42,12 @@ Find-your-way hat folgende Funktionen:
 ## Beispieldaten
 
 So sollte die CSV-Datei aussehen (im Verzeichnis ist auch eine Datei _example-data.csv_):
+
 **Hinweis**: Die Spalten Straße, Hausnummer, PLZ und Ort können leer sein.
 
 |Nummer|Standort                    |Straße                   |Hausnummer|PLZ  |Ort                    |Breitengrad|Längengrad|
 |------|----------------------------|-------------------------|----------|-----|-----------------------|-----------|----------|
-|1     |Ismaning/München (Hauptsitz)|Robert-Bürkle-Straße     |1         |85737|Ismaning               |48.229035  |11.686153 |
+|1     |Ismaning/München|Robert-Bürkle-Straße     |1         |85737|Ismaning               |48.229035  |11.686153 |
 |2     |Berlin                      |Wittestraße              |30        |13509|Berlin                 |52.580911  |13.293884 |
 |3     |Braunschweig                |Mittelweg                |7         |38106|Braunschweig           |52.278748  |10.524797 |
 |4     |Bretten                     |Edisonstraße             |2         |75015|Bretten                |49.032767  |8.698372  |
@@ -76,7 +77,7 @@ So sollte die CSV-Datei aussehen (im Verzeichnis ist auch eine Datei _example-da
 
 |Nummer|Standort|Straße|Ort|
 |--- |--- |--- |--- |
-|1|Ismaning/München (Hauptsitz)|Robert-Bürkle-Straße 1|85737 Ismaning|
+|1|Ismaning/München(Hauptsitz)|Robert-Bürkle-Straße 1|85737 Ismaning|
 |12|Ingolstadt|Pascalstraße 4|85057 Ingolstadt|
 |16|Nürnberg|Südwestpark 60|90449 Nürnberg|
 |20|Stuttgart|Humboldtstraße 35|70771 Leinfelden-Echterdingen|
@@ -137,7 +138,7 @@ This is how the CSV file should look like (there is also a file _example-data.cs
 
 |Id|location name                |street                   |house number|post code  |city                    |latitude|longitude|
 |------|----------------------------|-------------------------|----------|-----|-----------------------|-----------|----------|
-|1     |Ismaning/München (Hauptsitz)|Robert-Bürkle-Straße     |1         |85737|Ismaning               |48.229035  |11.686153 |
+|1     |Ismaning/München            |Robert-Bürkle-Straße     |1         |85737|Ismaning               |48.229035  |11.686153 |
 |2     |Berlin                      |Wittestraße              |30        |13509|Berlin                 |52.580911  |13.293884 |
 |3     |Braunschweig                |Mittelweg                |7         |38106|Braunschweig           |52.278748  |10.524797 |
 |4     |Bretten                     |Edisonstraße             |2         |75015|Bretten                |49.032767  |8.698372  |
